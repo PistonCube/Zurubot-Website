@@ -1,0 +1,49 @@
+body {
+    background-color: #000;
+    color: #fff; 
+}
+.navbar {
+    background-color: #111; 
+}
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+.navbar-brand img {
+    margin-right: 8px;
+}
+.nav-link {
+    color: #ddd;
+    font-size: 0.95rem;
+    margin-right: 20px;
+}
+.nav-link:hover {
+    color: #fff;
+}
+footer {
+    font-size: 0.9rem;
+}
+h1, h2 {
+    font-weight: bold;
+    color: #786fc7;
+}
+.tos-section {
+    margin-top: 30px;
+    line-height: 1.6;
+}
+.tos-section h2 {
+    margin-top: 20px;
+}
+.btn {
+    border-radius: 0; 
+}
+.btn-premium {
+    color: #e63946;
+    border: 1px solid #e63946;
+}
+.btn-premium:hover {
+    background-color: #e63946;
+    color: #fff;
+}
