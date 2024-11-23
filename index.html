@@ -41,7 +41,7 @@
     <img src="/img/logo.png" alt="Logo grande" width="100" height="100" class="mb-4">
     <h1 class="fw-bold">ZuruBot</h1>
     <p class="lead">The most comprehensive utility bot for Discord.</p>
-    <p class="mt-3">Zuru is used on over 36 servers and 77k Users, we invite you to try it out and hope you enjoy!</p>
+    <p>Zuru is used on over +<span id="servers">0</span> servers and +<span id="users">0</span> Users, we invite you to try it out and hope you enjoy!</p>
     <div class="mt-4">
         <a href="https://discord.com/oauth2/authorize?client_id=1054588693681279047&scope=bot&permissions=278635047935" class="btn btn-primary btn-lg me-3">Add To Server</a>
         <a href="https://discord.gg/QdA7BNyZ8V" class="btn btn-outline-light btn-lg">Login with Discord</a>
@@ -60,5 +60,6 @@
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+    <script src="/js/api.js"></script>
 </body>
 </html>
