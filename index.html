@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/discordInvite.css">
 
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -29,7 +30,7 @@
                     <li class="nav-item"><a class="nav-link" href="tos">TOS</a></li>
                     <li class="nav-item"><a class="nav-link" href="privacy">Privacy</a></li>
                     <li class="nav-item">
-                        <a class="btn btn-premium" href="#">Get Premium</a>
+                        <a class="btn btn-premium" href="https://donate.pistoncube.com.ar/">Get Premium</a>
                     </li>
                 </ul>
             </div>
@@ -37,17 +38,19 @@
     </nav>
 
     <!-- Hero Section -->
-<section class="hero text-center py-5">
-    <img src="/img/logo.png" alt="Logo grande" width="100" height="100" class="mb-4">
-    <h1 class="fw-bold">ZuruBot</h1>
-    <p class="lead">The most comprehensive utility bot for Discord.</p>
-    <!-- <p>Zuru is used on over +<span id="servers">0</span> servers and +<span id="users">0</span> Users, we invite you to try it out and hope you enjoy!</p>-->
-        <p>Zuru is used on over +<span id="servers">49</span> servers and +<span id="users">78178</span> Users, we invite you to try it out and hope you enjoy!</p>
-    <div class="mt-4">
-        <a href="https://discord.com/oauth2/authorize?client_id=1054588693681279047&scope=bot&permissions=278635047935" class="btn btn-primary btn-lg me-3">Add To Server</a>
-        <a href="https://discord.gg/QdA7BNyZ8V" class="btn btn-outline-light btn-lg">Login with Discord</a>
-    </div>
-</section>
+    <section class="hero text-center py-5">
+        <div class="container">
+            <img src="/img/logo.png" alt="Zuru Large Logo" width="100" height="100" class="mb-4">
+            <h1 class="fw-bold">ZuruBot</h1>
+            <p class="lead">The most comprehensive utility bot for Discord.</p>
+            <p>Zuru is used on over <strong>+<span id="servers">49</span></strong> servers and <strong>+<span id="users">78,178</span></strong> users. We invite you to try it out and hope you enjoy!</p>
+            <div class="mt-4">
+                <a href="https://discord.com/oauth2/authorize?client_id=1054588693681279047&scope=bot&permissions=278635047935" class="btn btn-primary btn-lg me-3">Add To Server</a>
+                <a href="https://discord.gg/QdA7BNyZ8V" class="btn btn-outline-light btn-lg">Login with Discord</a>
+            </div>
+            <div id="discordInviteBox" class="mt-4"></div>
+        </div>
+    </section>
 
 
     <!-- Footer -->
@@ -62,5 +65,14 @@
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
     <script src="/js/api.js"></script>
+    <script src="/js/discord.js"></script>
+    <script>
+        discordInvite.init({
+            inviteCode: 'xqQCHk5JwU',
+            title: 'Support Server',
+            introText: 'Join the Support Server:',
+        });
+        discordInvite.render();
+    </script>
 </body>
 </html>
