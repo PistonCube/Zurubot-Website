@@ -1,49 +1,103 @@
-body {
-    background-color: #000;
-    color: #fff; 
+/* General Styles */
+.privacy-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    color: #333;
+    line-height: 1.6;
 }
-.navbar {
-    background-color: #111; 
+
+.privacy-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1.5rem;
 }
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
+
+.privacy-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #4a6cf7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.privacy-header h1 i {
+    margin-right: 0.8rem;
+}
+
+.last-updated {
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Privacy Content - Eliminado el fondo blanco y sombra */
+.privacy-content {
+    padding: 0; /* Eliminamos el padding adicional */
+}
+
+.privacy-section {
+    margin-bottom: 2rem;
+}
+
+.privacy-section:last-child {
+    margin-bottom: 0;
+}
+
+.privacy-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
     display: flex;
     align-items: center;
 }
-.navbar-brand img {
-    margin-right: 8px;
+
+.section-number {
+    display: inline-block;
+    width: 2rem;
+    color: #4a6cf7;
+    font-weight: 600;
 }
-.nav-link {
-    color: #ddd;
-    font-size: 0.95rem;
-    margin-right: 20px;
+
+.privacy-section p {
+    margin-bottom: 0.5rem;
+    color: #acacac;
+    padding-left: 2rem;
 }
-.nav-link:hover {
-    color: #fff;
+
+.text-link {
+    color: #4a6cf7;
+    text-decoration: none;
+    font-weight: 500;
 }
-footer {
-    font-size: 0.9rem;
+
+.text-link:hover {
+    text-decoration: underline;
 }
-h1, h2 {
-    font-weight: bold;
-    color: #786fc7;
-}
-.tos-section {
-    margin-top: 30px;
-    line-height: 1.6;
-}
-.tos-section h2 {
-    margin-top: 20px;
-}
-.btn {
-    border-radius: 0; 
-}
-.btn-premium {
-    color: #e63946;
-    border: 1px solid #e63946;
-}
-.btn-premium:hover {
-    background-color: #e63946;
-    color: #fff;
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .privacy-container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .privacy-header h1 {
+        font-size: 2rem;
+        flex-direction: column;
+    }
+    
+    .privacy-header h1 i {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .privacy-section h2 {
+        font-size: 1.2rem;
+    }
+    
+    .privacy-section p {
+        padding-left: 0;
+    }
 }
