@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZuruBot | All-in-One Discord Bot with AI, Music & Moderation</title>
+    <meta name="description" content="ZuruBot is the most comprehensive Discord bot featuring ChatGPT AI, music playback, advanced moderation, economy system, and Minecraft integrations. Enhance your server today!">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="discord bot, zurubot, discord moderation bot, discord music bot, ai discord bot, chatgpt discord, minecraft discord bot, discord economy bot">
+    <link rel="canonical" href="https://zuru.pistoncube.com.ar/" />
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="ZuruBot | All-in-One Discord Bot">
+    <meta property="og:description" content="Feature-rich Discord bot with AI, music, moderation and Minecraft support">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zuru.pistoncube.com.ar/">
+    <meta property="og:image" content="https://zuru.pistoncube.com.ar/img/social-preview.png">
+    <meta property="og:site_name" content="ZuruBot">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ZuruBot | All-in-One Discord Bot">
+    <meta name="twitter:description" content="AI, music, moderation and fun in one Discord bot">
+    <meta name="twitter:image" content="https://zuru.pistoncube.com.ar/img/social-preview.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./img/logo.png" type="image/png">
+    
+    <!-- Preload Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="./img/logo.png" as="image">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/discordInvite.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="navbar-container">
+            <a href="/" class="logo">
+                <img src="/img/logo.png" alt="ZuruBot Logo">
+                Zuru
+            </a>
+            
+            <button class="menu-toggle" aria-label="Toggle navigation menu" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="commands" class="nav-link">Commands</a>
+                <a href="status" class="nav-link">Status</a>
+                <a href="tos" class="nav-link">Terms</a>
+                <a href="privacy" class="nav-link">Privacy</a>
+                <a href="https://donate.pistoncube.com.ar/" class="btn-premium">
+                    <i class="fas fa-crown"></i> Premium
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="/img/logo.png" alt="ZuruBot Logo">
+            <h1>ZuruBot</h1>
+            <p>Your all-in-one Discord assistant with AI, music, moderation and fun</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="servers-count">0</div>
+                    <div class="stat-label">Servers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="users-count">0</div>
+                    <div class="stat-label">Users</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="uptime-count">0</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <a href="https://discord.com/oauth2/authorize?client_id=1054588693681279047&scope=bot&permissions=278635047935" 
+                   class="btn btn-primary" aria-label="Add ZuruBot to your Discord server">
+                    <i class="fas fa-robot"></i> Add to Discord
+                </a>
+                <a href="https://discord.gg/QdA7BNyZ8V" 
+                   class="btn btn-outline" aria-label="Join ZuruBot support server">
+                    <i class="fab fa-discord"></i> Support Server
+                </a>
+            </div>
+            
+            <div class="discord-widget-container">
+                <div id="discordInviteBox" aria-label="Discord server invite widget"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <h2 class="section-title">Key Features</h2>
+            
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">Artificial Intelligence</h3>
+                    <p class="feature-desc">Powerful integration with advanced AI models</p>
+                    <ul class="feature-list">
+                        <li>ChatGPT (GPT-4 and GPT-4o)</li>
+                        <li>Advanced information search</li>
+                        <li>Translation between languages</li>
+                        <li>Smart question answering</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Advanced Moderation</h3>
+                    <p class="feature-desc">Keep your server safe and organized</p>
+                    <ul class="feature-list">
+                        <li>Warning and ban system</li>
+                        <li>Comprehensive logging (soon)</li>
+                        <li>Customizable security settings (soon)</li>
+                        <li>User management tools</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3 class="feature-title">High Quality Music</h3>
+                    <p class="feature-desc">Music player with premium features</p>
+                    <ul class="feature-list">
+                        <li>Playback from YouTube, Spotify</li>
+                        <li>Playlists and queue management</li>
+                        <li>Sound effects and equalizer</li>
+                        <li>Song lyrics display</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="feature-title">Economy & Games</h3>
+                    <p class="feature-desc">Fun and interaction for your community</p>
+                    <ul class="feature-list">
+                        <li>Currency system with jobs</li>
+                        <li>Gambling and stealing mechanics</li>
+                        <li>Trivia and quiz games</li>
+                        <li>Leveling and experience</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Minecraft Section -->
+    <section class="minecraft-section">
+        <div class="minecraft-container">
+            <div class="minecraft-title">
+                <img src="./img/Grass_Block.webp" alt="Minecraft Icon">
+                <h2 class="section-title">Minecraft Support</h2>
+            </div>
+            
+            <p>Special integrations for the Minecraft community</p>
+            
+            <div class="minecraft-features">
+                <div class="minecraft-feature">
+                    <h3><i class="fas fa-server"></i> Server Status</h3>
+                    <p>Check status of any Java or Bedrock server</p>
+                </div>
+                <div class="minecraft-feature">
+                    <h3><i class="fas fa-trophy"></i> Hypixel Stats</h3>
+                    <p>View your Hypixel and minigame statistics</p>
+                </div>
+                <div class="minecraft-feature">
+                    <h3><i class="fas fa-user"></i> Player Profiles</h3>
+                    <p>Detailed Minecraft account information</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>ZuruBot</h3>
+                <p>The most comprehensive multifunction Discord bot with AI, music, moderation and fun.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="commands">Commands</a></li>
+                    <li><a href="status">Status</a></li>
+                    <li><a href="tos">Terms</a></li>
+                    <li><a href="privacy">Privacy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="https://discord.gg/QdA7BNyZ8V">Support Server</a></li>
+                    <li><a href="https://donate.pistoncube.com.ar/">Get Premium</a></li>
+                    <li><a href="https://github.com/pistoncube">GitHub</a></li>
+                    <li><a href="status">Service Status</a></li>
+                    <li><a href="https://www.pistoncube.com.ar/">PistonProjects</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://discord.gg/QdA7BNyZ8V" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="https://github.com/pistoncube" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <p class="copyright">© 2019 - <span id="year"></span> PistonProjects. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/js.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/discord.js"></script>
+</body>
+</html>

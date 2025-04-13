@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZuruBot Status | Real-time Bot Performance</title>
+    <meta name="description" content="Real-time status and performance metrics for ZuruBot. Check uptime, response times, and service availability.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./img/logo.png" type="image/png">
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="zurubot status, zurubot uptime, discord bot status, zurubot performance">
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <link rel="stylesheet" href="./css/status.css">
+
+    <!-- Chart.js for statistics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="navbar-container">
+            <a href="/" class="logo">
+                <img src="/img/logo.png" alt="ZuruBot Logo">
+                Zuru
+            </a>
+            
+            <button class="menu-toggle" aria-label="Toggle navigation menu" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="commands" class="nav-link">Commands</a>
+                <a href="status" class="nav-link active">Status</a>
+                <a href="tos" class="nav-link">Terms</a>
+                <a href="privacy" class="nav-link">Privacy</a>
+                <a href="https://donate.pistoncube.com.ar/" class="btn-premium">
+                    <i class="fas fa-crown"></i> Premium
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Status Content -->
+    <div class="status-container">
+        <div class="status-header">
+            <h1><i class="fas fa-heartbeat"></i> System Status</h1>
+            <p>Real-time monitoring of ZuruBot's performance and service availability</p>
+        </div>
+
+        <!-- Status Overview -->
+        <div class="status-overview">
+            <div class="status-card" id="overall-status">
+                <div class="status-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="status-content">
+                    <h3>All Systems Operational</h3>
+                    <p>Last checked: <span id="last-checked">Loading...</span></p>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon uptime">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>Uptime</h4>
+                        <p id="uptime">Loading...</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon ping">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>API Response</h4>
+                        <p id="api-ping">Loading...</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon servers">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>Servers</h4>
+                        <p id="server-count">Loading...</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon users">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>Users</h4>
+                        <p id="user-count">Loading...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Components -->
+        <div class="components-section">
+            <h2><i class="fas fa-cubes"></i> Service Components</h2>
+            
+            <div class="components-grid">
+                <div class="component-card" id="bot-status">
+                    <div class="component-header">
+                        <span class="status-dot operational"></span>
+                        <h3>Bot Core</h3>
+                    </div>
+                    <p>Main bot functionality and command processing</p>
+                    <div class="component-meta">
+                        <span class="latency" id="bot-latency">Latency: Loading...</span>
+                    </div>
+                </div>
+                
+                <div class="component-card" id="api-status">
+                    <div class="component-header">
+                        <span class="status-dot operational"></span>
+                        <h3>API Service</h3>
+                    </div>
+                    <p>External API connections and data processing</p>
+                    <div class="component-meta">
+                        <span class="latency" id="api-latency">Latency: Loading...</span>
+                    </div>
+                </div>
+                
+                <div class="component-card" id="music-status">
+                    <div class="component-header">
+                        <span class="status-dot operational"></span>
+                        <h3>Music Service</h3>
+                    </div>
+                    <p>Audio streaming and playback functionality</p>
+                    <div class="component-meta">
+                        <span class="latency" id="music-latency">Latency: Loading...</span>
+                    </div>
+                </div>
+                
+                <div class="component-card" id="database-status">
+                    <div class="component-header">
+                        <span class="status-dot operational"></span>
+                        <h3>Database</h3>
+                    </div>
+                    <p>User data storage and retrieval</p>
+                    <div class="component-meta">
+                        <span class="latency" id="db-latency">Latency: Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Charts -->
+        <div class="charts-section">
+            <h2><i class="fas fa-chart-line"></i> Performance Metrics</h2>
+            
+            <div class="chart-container">
+                <canvas id="responseTimeChart"></canvas>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="memoryUsageChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Incident History -->
+        <div class="incidents-section">
+            <h2><i class="fas fa-history"></i> Incident History</h2>
+            
+            <div class="incident-timeline" id="incident-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker operational"></div>
+                    <div class="timeline-content">
+                        <h3>No recent incidents</h3>
+                        <p>All systems have been running smoothly.</p>
+                        <span class="timeline-date">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>ZuruBot</h3>
+                <p>The most comprehensive multifunction Discord bot with AI, music, moderation and fun.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="commands">Commands</a></li>
+                    <li><a href="status">Status</a></li>
+                    <li><a href="tos">Terms</a></li>
+                    <li><a href="privacy">Privacy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="https://discord.gg/QdA7BNyZ8V">Support Server</a></li>
+                    <li><a href="https://donate.pistoncube.com.ar/">Get Premium</a></li>
+                    <li><a href="https://github.com/pistoncube">GitHub</a></li>
+                    <li><a href="status">Service Status</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://discord.gg/QdA7BNyZ8V" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="https://github.com/pistoncube" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <p class="copyright">© 2019 - <span id="year"></span> PistonProjects. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/js.js"></script>
+</body>
+</html>
