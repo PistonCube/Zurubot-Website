@@ -1,0 +1,51 @@
+.error-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.error-code {
+    font-size: 8rem;
+    font-weight: 700;
+    color: #42f554;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.error-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.error-message {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #aaa;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error-image {
+    max-width: 300px;
+    margin: 2rem auto;
+    opacity: 0.8;
+}
+
+.error-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .error-code {
+        font-size: 5rem;
+    }
+    
+    .error-title {
+        font-size: 1.5rem;
+    }
+}

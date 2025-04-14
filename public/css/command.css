@@ -67,6 +67,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    transition: left 0.3s ease; /* Transición añadida */
 }
 
 .nav-link {
@@ -295,13 +296,13 @@ footer {
     
     .nav-links {
         position: fixed;
-        top: 0;
+        top: 70px; /* Ajuste clave */
         left: -100%;
         width: 80%;
-        height: 100vh;
+        height: calc(100vh - 70px); /* Altura corregida */
         background-color: var(--dark);
         flex-direction: column;
-        padding: 6rem 2rem 2rem;
+        padding: 2rem;
         gap: 1.5rem;
         transition: left 0.3s ease;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -313,7 +314,7 @@ footer {
     }
 }
 
-/* Responsive */
+/* Responsive General */
 @media (max-width: 768px) {
     .commands-header h1 {
         font-size: 2rem;
@@ -321,10 +322,6 @@ footer {
     
     .command-categories {
         grid-template-columns: 1fr;
-    }
-    
-    .nav-links {
-        display: none;
     }
     
     .footer-content {
